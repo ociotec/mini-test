@@ -58,6 +58,37 @@ int main(int argc, char **argv)
 }
 ```
 
+### Creating the XML report in a regular file
+
+By default the XML report will be output in the standar output, but it could be also output in the standar error or even in a regular file.
+
+Take a look to the following examples:
+
+```c
+int main(int argc, char **argv)
+{
+    CREATE_REPORT("stderr");
+    RUN_TEST_SUITES(TEST_SUITE(Calculator), TEST_SUITE(Dummy));
+
+    return ERRORS_COUNT;
+}
+```
+
+Call `CREATE_REPORT` to create the report with `stdout` (default if you don't call the macro), `stderr` or the file name (relative or absolute path).
+
+```c
+int main(int argc, char **argv)
+{
+    CREATE_REPORT("report.xml");
+    RUN_TEST_SUITES(TEST_SUITE(Calculator), TEST_SUITE(Dummy));
+    CLOSE_REPORT();
+
+    return ERRORS_COUNT;
+}
+```
+
+Call `CLOSE_REPORT` when you call `CREATE_REPORT` with a regular file name, to close the report file properly.
+
 ## Report example
 
 The test report follows standar JUNIT format, this is an example of a test report (from the tests described in `main.c`):

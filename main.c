@@ -21,9 +21,10 @@ DEFINE_TEST_CASE(CompareTexts)
 }
 
 DEFINE_TEST_SUITE(Dummy, TEST_CASE(CompareTexts));
-                  
+
 int main(int argc, char **argv)
 {
     RUN_TEST_SUITES(TEST_SUITE(Calculator), TEST_SUITE(Dummy));
+
     return ERRORS_COUNT;
 }

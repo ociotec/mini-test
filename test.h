@@ -72,6 +72,22 @@
     @see RUN_TEST_SUITES */
 #define ERRORS_COUNT GetTestErrorsCount()
 
+/** Creates the XML report file.
+    @param fileName File name for the report file. It could be also @c stdout or @c stderr.
+    @see CLOSE_REPORT
+    @note The use of this macro is optional, default XML report is stdout.
+    @warning If you call this macro with a regular file name, be sure of calling the macro
+    @c CLOSE_REPORT at the end of the suites run. */
+#define CREATE_REPORT(fileName) CreateReportFile(fileName)
+/** Close the XML report file.
+    @see CREATE_REPORT
+    @note The use of this macro is optional, default XML report is stdout. */
+#define CLOSE_REPORT() CloseReportFile()
+
+/***************************************************************
+   INTERNAL STUFF, don't use directly, just just macros above.
+ ***************************************************************/
+
 /** Pointer to a test case function. */    
 typedef void (* TEST_CASE_FUNCTION)();
 /** Test case information structure. */
@@ -138,4 +154,10 @@ void RunTestSuites(const TEST_SUITE_INFO *testSuites, unsigned int testSuitesCou
     @warning Don't call this function, use macro instead. */
 unsigned int GetTestErrorsCount();
 
+/** Set the XML report file.
+    @param fileName File name for the report file. It could be also @c stdout or @c stderr. */
+void CreateReportFile(const char *fileName);
+/** Close the XML report file. */
+void CloseReportFile();
+    
 #endif
