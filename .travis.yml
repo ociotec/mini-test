@@ -1,0 +1,3 @@
+language: C
+script: gcc src/test.c samples/main.c -Isrc
+
