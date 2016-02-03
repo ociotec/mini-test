@@ -4,9 +4,9 @@ Minimalistic unit testing framework for C language (no dependencies).
 
 ## Build
 
-Just include `test.h` & `test.c` in your building, the only needed system included file is `stdio.h` (`fprintf` & `strcmp`).
+Just include [`test.h`](src/test.h) & [`test.c`](src/test.h) in your building, the only needed system included file is `stdio.h` (`fprintf` & `strcmp`).
 
-If you want to run this library with the given example (in `main.c`), just run `gcc`:
+If you want to run this library with the given example (in [`main.c`](samples/main.c)), just run `gcc`:
 
 ```
 gcc main.c test.c
@@ -14,11 +14,11 @@ gcc main.c test.c
 
 ## Example of usage
 
-The file `main.c` is just an example of usage, it's not needed at all to define your own tests.
+The file [`main.c`](samples/main.c) is just an example of usage, it's not needed at all to define your own tests.
 
 ### Defining test cases
 
-To create a test case, just include `test.h` & define it with the macro `DEFINE_TEST_CASE`, then use `CHECK_EQUAL` macros to add checks inside the test case:
+To create a test case, just include [`test.h`](src/test.h) & define it with the macro `DEFINE_TEST_CASE`, then use `CHECK_EQUAL` macros to add checks inside the test case:
 
 ```c
 DEFINE_TEST_CASE(AddNumbers)
@@ -91,7 +91,7 @@ Call `CLOSE_REPORT` when you call `CREATE_REPORT` with a regular file name, to c
 
 ## Report example
 
-The test report follows standar JUNIT format, this is an example of a test report (from the tests described in `main.c`):
+The test report follows standar JUNIT format, [this is an example of an XML test report](samples/report.xml), from the tests described in [`main.c`](src/main.c):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
