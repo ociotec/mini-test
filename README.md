@@ -95,8 +95,8 @@ The test report follows standar JUNIT format, [this is an example of an XML test
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name=Calculator">
-  <testcase name=AddPositives">
+<testsuite name="Calculator">
+  <testcase name="AddPositives">
     <failure message="Test case check failure">
       File "main.c", line 7, on function AddPositivesTestCase
       Value 4 was expected instead of 8
@@ -106,15 +106,15 @@ The test report follows standar JUNIT format, [this is an example of an XML test
       Value 4 was expected instead of 30
     <failure/>
   </testcase>
-  <testcase name=AddNegatives">
+  <testcase name="AddNegatives">
     <failure message="Test case check failure">
       File "main.c", line 13, on function AddNegativesTestCase
       Value -4 was expected instead of 3
     <failure/>
   </testcase>
 </testsuite>
-<testsuite name=Dummy">
-  <testcase name=CompareTexts">
+<testsuite name="Dummy">
+  <testcase name="CompareTexts">
     <failure message="Test case check failure">
       File "main.c", line 20, on function CompareTextsTestCase
       Value "Text 1" was expected instead of "Other text"
