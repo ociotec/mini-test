@@ -40,7 +40,7 @@ static void RunTestCase(const TEST_CASE_INFO *testCase)
     if (NULL != testCase)
     {
         /* Write test case tag. */
-        fprintf(GetReportFile(), "    <testcase name=\%s\">\n", testCase->name);
+        fprintf(GetReportFile(), "    <testcase name=\"\%s\">\n", testCase->name);
         /* Run the test case function. */
         testCase->function();
         fprintf(GetReportFile(), "    </testcase>\n");
@@ -56,7 +56,7 @@ static void RunTestSuite(const TEST_SUITE_INFO *testSuite)
     if (NULL != testSuite)
     {
         /* Write test suite tag. */
-        fprintf(GetReportFile(), "<testsuite name=\%s\">\n", testSuite->name);
+        fprintf(GetReportFile(), "<testsuite name=\"\%s\">\n", testSuite->name);
         /* Loop & report all the test cases inside the test suite. */
         for (test = 0; test < testSuite->testCasesCount; test++)
         {
